@@ -6,7 +6,7 @@ type LayoutPropsType = {
 }
 function Layout({ children }: LayoutPropsType) {
     return (
-        <div className="w-full h-auto bg-green-300 flex flex-col">
+        <div className="w-full h-auto flex flex-col">
             <div>
                 <Header />
             </div>
