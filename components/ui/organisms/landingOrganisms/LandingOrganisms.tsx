@@ -1,4 +1,5 @@
 import Image from "../../atom/customImage/Image";
+import Logos from "../../molecules/logos/Logos";
 import NewIn from "../../molecules/newIn/NewIn";
 import TopBrands from "../../molecules/topBrands/TopBrands";
 import TopSelling from "../../molecules/topSelling/TopSelling";
@@ -15,6 +16,7 @@ function LandingOrganisms() {
                 <TopBrands />
                 <NewIn />
                 <Posters />
+                <Logos />
             </div>
         </>
     );
