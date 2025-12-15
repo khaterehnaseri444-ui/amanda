@@ -1,8 +1,8 @@
 import { ImgHTMLAttributes } from 'react';
 
-type ImageProps = ImgHTMLAttributes<HTMLImageElement>;
+type ImagePropsType = ImgHTMLAttributes<HTMLImageElement>;
 
-function Image({ ...props }: ImageProps) {
+function Image({ ...props }: ImagePropsType) {
     return <img {...props} />
 }
 export default Image;
