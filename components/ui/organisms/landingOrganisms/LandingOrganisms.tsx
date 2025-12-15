@@ -3,6 +3,7 @@ import NewIn from "../../molecules/newIn/NewIn";
 import TopBrands from "../../molecules/topBrands/TopBrands";
 import TopSelling from "../../molecules/topSelling/TopSelling";
 import Categories from "../categories/Categories";
+import Posters from "../posters/Posters";
 
 function LandingOrganisms() {
     return (
@@ -13,6 +14,7 @@ function LandingOrganisms() {
                 <TopSelling />
                 <TopBrands />
                 <NewIn />
+                <Posters />
             </div>
         </>
     );
