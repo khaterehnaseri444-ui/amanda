@@ -1,4 +1,5 @@
 import Image from "../../atom/customImage/Image";
+import TopBrands from "../../molecules/topBrands/TopBrands";
 import TopSelling from "../../molecules/topSelling/TopSelling";
 import Categories from "../categories/Categories";
 
@@ -9,6 +10,7 @@ function LandingOrganisms() {
             <div className="w-300 gap-10 flex flex-col">
                 <Categories />
                 <TopSelling />
+                <TopBrands />
             </div>
         </>
     );
