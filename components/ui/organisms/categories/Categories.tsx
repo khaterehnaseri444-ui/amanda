@@ -1,10 +1,11 @@
 import React from 'react';
 import CategoryCard from '../../molecules/categoryCard/CategoryCard';
+import { products } from '@/core/constants/products/Products';
 const categoriesList = [
-    { id: 1, title: 'lip makeup', img: '/assets/images/lipMakeup.jpg', href: '/categories/lip' },
-    { id: 2, title: 'eye makeup', img: '/assets/images/eyeMakeup.jpg', href: '/categories/eye' },
-    { id: 3, title: 'skin care', img: '/assets/images/skinCare.jpg', href: '/categories/skin' },
-    { id: 4, title: 'face makeup', img: '/assets/images/faceMakeup.jpg', href: '/categories/face' },
+    { id: 1, img: '/assets/images/lipMakeup.jpg', href: '/categories/lipMakeup' },
+    { id: 2, img: '/assets/images/eyeMakeup.jpg', href: '/categories/eyeMakeup' },
+    { id: 3, img: '/assets/images/skinCare.jpg', href: '/categories/skinCare' },
+    { id: 4, img: '/assets/images/faceMakeup.jpg', href: '/categories/faceMakeup' },
 ]
 
 function Categories() {
@@ -12,7 +13,7 @@ function Categories() {
         <div className='w-300 h-50 flex items-center justify-between mt-10'>
             {categoriesList.map((item) => (
                 <React.Fragment key={item.id}>
-                    <CategoryCard {...item} />
+                    <CategoryCard img={item.img} href={item.href} />
                 </React.Fragment>
             ))}
         </div>

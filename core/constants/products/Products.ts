@@ -22,7 +22,7 @@ export const products: ProductsType[] = [
     },
     {
         id: 2,
-        name: 'SHIGLAM primer',
+        name: 'Shiglam primer',
         img: '/assets/images/item2.jpg',
         price: 45,
         category: 'faceMakeup',
