@@ -8,18 +8,25 @@ interface WishPropsType {
     children: ReactNode
 }
 
-const WishContext = createContext<WishTypes | undefined>(undefined)
+const WishContext = createContext<WishTypes>({
+    wishList: [],
+    wishHandler: () => { }
+})
 
 export const WishProvider = (({ children }: WishPropsType) => {
     const [wishList, setWishList] = useState<ProductsType[]>([])
     useEffect(() => {
         const savedWish = localStorage.getItem('wishList')
         if (savedWish) {
-            setWishList(JSON.parse(savedWish))
+            try {
+                setWishList(JSON.parse(savedWish));
+            } catch {
+                setWishList([]);
+            }
         }
     }, [])
     useEffect(() => {
-        localStorage.setItem('wishList', JSON.stringify('wishList'))
+        localStorage.setItem('wishList', JSON.stringify(wishList))
     }, [wishList])
 
     const wishHandler = (item: ProductsType) => {

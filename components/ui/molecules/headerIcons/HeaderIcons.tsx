@@ -6,10 +6,12 @@ function HeaderIcons() {
     return (
         <div className="w-full flex items-center justify-between">
             <Link href={'/basket'}>
-            <RiShoppingCartLine className="text-[#aa5b57] cursor-pointer text-[22px] hover:text-[#FBD5DD]" />
+                <RiShoppingCartLine className="text-[#aa5b57] cursor-pointer text-[22px] hover:text-[#FBD5DD]" />
             </Link>
             <VscAccount className="text-[#aa5b57] cursor-pointer text-[22px] hover:text-[#FBD5DD]" />
-            <FcLikePlaceholder className="cursor-pointer text-[22px] hover:text-[#aa5b57]" />
+            <Link href={'/wishPage'}>
+                <FcLikePlaceholder className="cursor-pointer text-[22px] hover:text-[#aa5b57]" />
+            </Link>
         </div>
     );
 }
