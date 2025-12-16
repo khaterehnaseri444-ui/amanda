@@ -14,7 +14,7 @@ function ShowCategory() {
     const filterCagory = products.filter(item => item.category === category)
     return (
         <div className="w-full h-auto flex items-center justify-center">
-            <div className="w-300 h-auto bg-orange-400 flex flex-wrap items-center gap-10">
+            <div className="w-300 h-auto flex flex-wrap justify-between items-center gap-10">
                 {filterCagory.map((item) => (
                     <React.Fragment key={item.id}>
                         <div className='w-80 h-98 bg-linear-to-l from-[#fdf4f6] to-[#FBD5DD]  flex flex-col justify-around relative'>

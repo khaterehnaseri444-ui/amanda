@@ -30,7 +30,7 @@ export const products: ProductsType[] = [
         name: 'Dior eyeliner',
         img: '/assets/images/item3.jpg',
         price: 27,
-        category: 'faceMakeup',
+        category: 'eyeMakeup',
         images: [
             '/assets/images/item3.jpg',
             '/assets/images/item3.jpg',
