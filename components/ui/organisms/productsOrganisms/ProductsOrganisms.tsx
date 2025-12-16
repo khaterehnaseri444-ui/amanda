@@ -20,7 +20,7 @@ function ProductsOrganisms() {
             </div>
             <SearchBar valueInput={valueInput} setValueInput={setValueInput} />
             <div className='w-300 h-auto  flex justify-between'>
-                <div className="w-100 h-125 bg-emerald-500">
+                <div className="w-100 h-auto">
                     <Filter />
                 </div>
                 <div className="w-180 h-auto">
