@@ -1,11 +1,4 @@
-interface ProductsType {
-    id: number
-    name: string
-    img: string
-    price: number
-    category: string
-    images: string[]
-}
+import { ProductsType } from "@/core/types/productsType/ProductsType";
 
 export const products: ProductsType[] = [
     {
@@ -142,7 +135,7 @@ export const products: ProductsType[] = [
     },
     {
         id: 12,
-        name: 'Qlinique face mask',
+        name: 'Clinique face mask',
         img: '/assets/images/item12.jpg',
         price: 21,
         category: 'skinCare',
@@ -154,7 +147,7 @@ export const products: ProductsType[] = [
     },
     {
         id: 13,
-        name: 'Qlinique powder',
+        name: 'Clinique powder',
         img: '/assets/images/item13.jpg',
         price: 130,
         category: 'faceMakeup',

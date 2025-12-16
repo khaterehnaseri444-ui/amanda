@@ -26,11 +26,11 @@ function ProductDetailOrganisms({ productDetail }: ProductsPropsType) {
                 <P className="text-[20px] text-[#aa5b57]">{productDetail.category}</P>
                 <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, unde maxime molestiae dignissimos architecto voluptatibus praesentium nam laborum quisquam sequi.</P>
                 <P className="text-[20px] font-semibold mt-5">$ {productDetail.price}</P>
-                <Button className="w-full h-10 rounded-xl bg-[#aa5b57] flex items-center justify-center gap-3 text-white cursor-pointer">
+                <Button className="w-full h-15 rounded-xl bg-[#aa5b57] flex items-center justify-center gap-3 text-white cursor-pointer">
                     <P>Add To Cart</P>
                     <RiShoppingCartLine className="cursor-pointer text-[22px]" />
                 </Button>
-                <Button className="w-full h-10 rounded-xl bg-[#aa5b57] flex items-center justify-center gap-3 text-white cursor-pointer">
+                <Button className="w-full h-15 rounded-xl bg-[#aa5b57] flex items-center justify-center gap-3 text-white cursor-pointer">
                     <P>Buy Now</P>
                 </Button>
                 <div className="w-full h-20 flex items-end justify-between">

@@ -6,18 +6,24 @@ import Link from 'next/link';
 import { FcLikePlaceholder } from 'react-icons/fc';
 import Button from '../../atom/customButton/Button';
 import { RiShoppingCartLine } from 'react-icons/ri';
-function Products() {
+import { GoHeart } from 'react-icons/go';
+import { ProductsType } from '@/core/types/productsType/ProductsType';
+type ProductsFilterPropsType = {
+    filterSeaarch: ProductsType[]
+}
+function Products({ filterSeaarch }: ProductsFilterPropsType) {
     const [visibleProducts, setVisibleProducts] = useState<number>(6)
     return (
         <div className='w-full h-auto flex flex-col gap-10 mb-30'>
             <div className='w-full h-auto flex flex-wrap justify-between gap-3'>
-                {products.slice(0, visibleProducts).map((item) => (
+                {filterSeaarch.slice(0, visibleProducts).map((item) => (
                     <React.Fragment key={item.id}>
                         <div className='w-80 h-98 bg-linear-to-l from-[#fdf4f6] to-[#FBD5DD]  flex flex-col justify-around relative'>
                             <Link href={`/products/${item.id}`}>
                                 <Image src={item.img} className='w-full h-80 ' />
                             </Link>
-                            <FcLikePlaceholder className="text-white cursor-pointer text-[22px] absolute top-5 right-5" />
+                            <GoHeart  className="text-[#aa5b57] cursor-pointer text-[22px] absolute top-5 right-5" />
+                            {/* <FcLikePlaceholder/> */}
                             <div className='flex justify-around items-center'>
                                 <div className='w-60'>
                                     <P className='font-semibold text-[20px]'>{item.name}</P>
@@ -34,7 +40,7 @@ function Products() {
                 ))}
             </div>
             <div className='w-full h-20 flex justify-center items-center'>
-                {visibleProducts < products.length && (
+                {visibleProducts < filterSeaarch.length && (
                     <Button
                         className='w-60 h-10 bg-linear-to-l from-[#fdf4f6] to-[#FBD5DD] cursor-pointer'
                         onClick={() => setVisibleProducts(products.length)}>
