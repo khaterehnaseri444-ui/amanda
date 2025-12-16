@@ -10,7 +10,7 @@ const logos: string[] = [
 ]
 function Logos() {
     return (
-        <div className='w-300 h-60 flex justify-between'>
+        <div className='w-300 h-20 flex justify-between mb-20'>
             {logos.map((item, index) => (
                 <React.Fragment key={index}>
                     <div className='w-50 h-full'>

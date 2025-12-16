@@ -10,10 +10,10 @@ interface ProductsType {
 export const products: ProductsType[] = [
     {
         id: 1,
-        name: 'MAC lip stick',
+        name: 'Mac lip stick',
         img: '/assets/images/item1.jpg',
         price: 30,
-        category: 'lipMakeup',
+        category: 'Lip Makeup',
         images: [
             '/assets/images/itemDetail1-1.jpg',
             '/assets/images/itemDetail1-2.jpg',
