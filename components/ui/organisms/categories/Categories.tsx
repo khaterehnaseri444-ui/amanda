@@ -1,10 +1,10 @@
 import React from 'react';
 import CategoryCard from '../../molecules/categoryCard/CategoryCard';
 const categoriesList = [
-    { id: 1, title: 'lip makeup', img: '/assets/images/lipMakeup.jpg', href: '/categories/lipMakeup' },
-    { id: 2, title: 'eye makeup', img: '/assets/images/eyeMakeup.jpg', href: '/categories/eyeMakeup' },
-    { id: 3, title: 'skin care', img: '/assets/images/skinCare.jpg', href: '/categories/skinCare' },
-    { id: 4, title: 'face makeup', img: '/assets/images/faceMakeup.jpg', href: '/categories/faceMakeup' },
+    { id: 1, title: 'Lip Makeup', img: '/assets/images/lipMakeup.jpg', href: '/categories/Lip Makeup' },
+    { id: 2, title: 'Eye Makeup', img: '/assets/images/eyeMakeup.jpg', href: '/categories/Eye Makeup' },
+    { id: 3, title: 'Face Makeup', img: '/assets/images/faceMakeup.jpg', href: '/categories/Face Makeup' },
+    { id: 4, title: 'Skin Care', img: '/assets/images/skinCare.jpg', href: '/categories/Skin Care' },
 ]
 
 function Categories() {

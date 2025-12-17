@@ -4,5 +4,6 @@ export interface ProductsType {
     img: string
     price: number
     category: string
+    brand: string
     images: string[]
 }

@@ -7,6 +7,7 @@ export const products: ProductsType[] = [
         img: '/assets/images/item1.jpg',
         price: 30,
         category: 'Lip Makeup',
+        brand: 'Mac',
         images: [
             '/assets/images/itemDetail1-1.jpg',
             '/assets/images/itemDetail1-2.jpg',
@@ -18,7 +19,8 @@ export const products: ProductsType[] = [
         name: 'Shiglam primer',
         img: '/assets/images/item2.jpg',
         price: 45,
-        category: 'faceMakeup',
+        category: 'Face Makeup',
+        brand: 'Shiglam',
         images: [
             '/assets/images/itemDetail2-1.jpg',
             '/assets/images/itemDetail2-2.jpg',
@@ -30,7 +32,8 @@ export const products: ProductsType[] = [
         name: 'Dior eyeliner',
         img: '/assets/images/item3.jpg',
         price: 27,
-        category: 'eyeMakeup',
+        category: 'Eye Makeup',
+        brand: 'Dior',
         images: [
             '/assets/images/item3.jpg',
             '/assets/images/item3.jpg',
@@ -42,7 +45,8 @@ export const products: ProductsType[] = [
         name: 'Ordinary serum face',
         img: '/assets/images/item4.jpg',
         price: 65,
-        category: 'skinCare',
+        category: 'Skin Care',
+        brand: 'Ordinary',
         images: [
             '/assets/images/itemDetail4-1.jpg',
             '/assets/images/itemDetail4-2.jpg',
@@ -54,7 +58,8 @@ export const products: ProductsType[] = [
         name: 'Dior lipstick',
         img: '/assets/images/item5.jpg',
         price: 99,
-        category: 'lipMakeup',
+        category: 'Lip Makeup',
+        brand: 'Dior',
         images: [
             '/assets/images/itemDetail5-1.jpg',
             '/assets/images/itemDetail5-2.jpg',
@@ -66,7 +71,8 @@ export const products: ProductsType[] = [
         name: 'TIR TIR red cushon',
         img: '/assets/images/item6.jpg',
         price: 87,
-        category: 'faceMakeup',
+        category: 'Face Makeup',
+        brand: 'Tir Tir',
         images: [
             '/assets/images/itemDetail6-1.jpg',
             '/assets/images/itemDetail6-2.jpg',
@@ -78,7 +84,8 @@ export const products: ProductsType[] = [
         name: 'Kiko eye shadow',
         img: '/assets/images/item7.jpg',
         price: 320,
-        category: 'eyeMakeup',
+        category: 'Eye Makeup',
+        brand: 'Kiko',
         images: [
             '/assets/images/itemDetail7-1.jpg',
             '/assets/images/itemDetail7-2.jpg',
@@ -90,7 +97,8 @@ export const products: ProductsType[] = [
         name: 'Simple face wash',
         img: '/assets/images/item8.jpg',
         price: 55,
-        category: 'skinCare',
+        category: 'Skin Care',
+        brand: 'Simple',
         images: [
             '/assets/images/itemDetail8-1.jpg',
             '/assets/images/itemDetail8-2.jpg',
@@ -102,7 +110,8 @@ export const products: ProductsType[] = [
         name: 'Kiko lip gloss',
         img: '/assets/images/item9.jpg',
         price: 89,
-        category: 'lipMakeup',
+        category: 'Lip Makeup',
+        brand: 'Kiko',
         images: [
             '/assets/images/itemDetail9-1.jpg',
             '/assets/images/itemDetail9-2.jpg',
@@ -114,7 +123,8 @@ export const products: ProductsType[] = [
         name: 'Essence mascara',
         img: '/assets/images/item10.jpg',
         price: 112,
-        category: 'eyeMakeup',
+        category: 'Eye Makeup',
+        brand: 'Essence',
         images: [
             '/assets/images/itemDetail10-1.jpg',
             '/assets/images/itemDetail10-2.jpg',
@@ -126,7 +136,8 @@ export const products: ProductsType[] = [
         name: 'Shiglam blusher',
         img: '/assets/images/item11.jpg',
         price: 65,
-        category: 'faceMakeup',
+        category: 'Face Makeup',
+        brand: 'Shiglam',
         images: [
             '/assets/images/itemDetail11-1.jpg',
             '/assets/images/itemDetail11-2.jpg',
@@ -138,7 +149,8 @@ export const products: ProductsType[] = [
         name: 'Clinique face mask',
         img: '/assets/images/item12.jpg',
         price: 21,
-        category: 'skinCare',
+        category: 'Skin Care',
+        brand: 'Clinique',
         images: [
             '/assets/images/itemDetail12-1.jpg',
             '/assets/images/itemDetail12-2.jpg',
@@ -150,7 +162,8 @@ export const products: ProductsType[] = [
         name: 'Clinique powder',
         img: '/assets/images/item13.jpg',
         price: 130,
-        category: 'faceMakeup',
+        category: 'Face Makeup',
+        brand: 'Clinique',
         images: [
             '/assets/images/itemDetail13-1.jpg',
             '/assets/images/itemDetail13-2.jpg',
@@ -162,7 +175,8 @@ export const products: ProductsType[] = [
         name: 'YSL lip stick',
         img: '/assets/images/item14.jpg',
         price: 47,
-        category: 'lipMakeup',
+        category: 'Lip Makeup',
+        brand: 'YSL',
         images: [
             '/assets/images/itemDetail14-1.jpg',
             '/assets/images/itemDetail14-2.jpg',
@@ -174,7 +188,8 @@ export const products: ProductsType[] = [
         name: 'Nivea lip balm',
         img: '/assets/images/item15.jpg',
         price: 12,
-        category: 'skinCare',
+        category: 'Skin Care',
+        brand: 'Nivea',
         images: [
             '/assets/images/itemDetail15-1.jpg',
             '/assets/images/itemDetail15-2.jpg',
@@ -186,7 +201,8 @@ export const products: ProductsType[] = [
         name: 'Nars mascara',
         img: '/assets/images/item16.jpg',
         price: 64,
-        category: 'eyeMakeup',
+        category: 'Eye Makeup',
+        brand: 'Nars',
         images: [
             '/assets/images/itemDetail16-1.jpg',
             '/assets/images/itemDetail16-2.jpg',
@@ -198,7 +214,8 @@ export const products: ProductsType[] = [
         name: 'Channel lip stick',
         img: '/assets/images/item17.jpg',
         price: 97,
-        category: 'lipMakeup',
+        category: 'Lip Makeup',
+        brand: 'Channel',
         images: [
             '/assets/images/itemDetail17-1.jpg',
             '/assets/images/itemDetail17-2.jpg',
@@ -210,7 +227,8 @@ export const products: ProductsType[] = [
         name: 'MAC powder blush',
         img: '/assets/images/item18.jpg',
         price: 114,
-        category: 'faceMakeup',
+        category: 'Face Makeup',
+        brand: 'Mac',
         images: [
             '/assets/images/itemDetail18-1.jpg',
             '/assets/images/itemDetail18-2.jpg',
@@ -222,7 +240,8 @@ export const products: ProductsType[] = [
         name: 'Elf eye liner',
         img: '/assets/images/item19.jpg',
         price: 43,
-        category: 'eyeMakeup',
+        category: 'Eye Makeup',
+        brand: 'Elf',
         images: [
             '/assets/images/itemDetail19-1.jpg',
             '/assets/images/itemDetail19-2.jpg',
@@ -234,7 +253,8 @@ export const products: ProductsType[] = [
         name: 'Pixi glow tonic',
         img: '/assets/images/item20.jpg',
         price: 12,
-        category: 'skinCare',
+        category: 'Skin Care',
+        brand: 'Pixi',
         images: [
             '/assets/images/itemDetail20-1.jpg',
             '/assets/images/itemDetail20-2.jpg',

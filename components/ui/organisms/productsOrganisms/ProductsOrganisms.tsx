@@ -8,7 +8,14 @@ import { products } from "@/core/constants/products/Products";
 
 function ProductsOrganisms() {
     const [valueInput, setValueInput] = useState<string>('')
-    const filterSeaarch = products.filter((item) => item.name.toLowerCase().includes(valueInput.toLowerCase()))
+    const [chosenBrand, setChosenBrand] = useState<string[]>([])
+    const [chosenCategory, setChosenCategory] = useState<string[]>([])
+    const filterProducts = products.filter((item) => {
+        const filterSeaarch = item.name.toLowerCase().includes(valueInput.toLowerCase())
+        const filterBrands = chosenBrand.length === 0 || chosenBrand.includes(item.brand)
+        const filterCategory = chosenCategory.length === 0 || chosenCategory.includes(item.category)
+        return filterSeaarch && filterBrands && filterCategory
+    })
     return (
         <div className='w-full h-auto flex flex-col justify-center items-center'>
             <div className="w-300 h-30 flex items-center gap-5">
@@ -21,10 +28,10 @@ function ProductsOrganisms() {
             <SearchBar valueInput={valueInput} setValueInput={setValueInput} />
             <div className='w-300 h-auto  flex justify-between'>
                 <div className="w-100 h-auto">
-                    <Filter />
+                    <Filter chosenBrand={chosenBrand} setChosenBrand={setChosenBrand} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} />
                 </div>
                 <div className="w-180 h-auto">
-                    <Products filterSeaarch={filterSeaarch}/>
+                    <Products filterSeaarch={filterProducts} />
                 </div>
             </div>
         </div>
