@@ -14,15 +14,13 @@ const signupSchema = Yup.object().shape({
 })
 
 interface FormValueType {
-    name: string
     email: string
     password: string
 }
 
-function SignupForm() {
+function LoginForm() {
     const router = useRouter();
     const initialValues: FormValueType = {
-        name: '',
         email: '',
         password: ''
     }
@@ -32,23 +30,21 @@ function SignupForm() {
     }
     return (
         <div className='w-full h-full flex flex-col items-center justify-between'>
-            <P className='text-[20px] font-semibold'>Create Your Acount</P>
+            <P className='text-[20px] font-semibold'>Log In To Amanda</P>
             <Formik initialValues={initialValues} onSubmit={formHandler} validationSchema={signupSchema}>
                 <Form>
                     <div className='w-full h-auto flex flex-col justify-between gap-3'>
-                        <Field as={Input} name='name' type='text' placeholder='Name' className={`w-100 h-10 rounded-2xl outline-none p-5 border-[#FBD5DD] border`} />
-                        <ErrorMessage name='name' component={'P'} className='text-[12px] text-[red]' />
                         <Field as={Input} name='email' type='text' placeholder='Email' className={`w-100 h-10 rounded-2xl outline-none p-5 border-[#FBD5DD] border`} />
                         <ErrorMessage name='email' component={'P'} className='text-[12px] text-[red]' />
                         <Field as={Input} name='password' type='text' placeholder='Password' className={`w-100 h-10 rounded-2xl outline-none p-5 border-[#FBD5DD] border`} />
                         <ErrorMessage name='password' component={'P'} className='text-[12px] text-[red]' />
-                        <Button type='submit' className='w-100 h-10 bg-[#FBD5DD] rounded-2xl cursor-pointer'>Create Account</Button>
+                        <Button type='submit' className='w-100 h-10 bg-[#FBD5DD] rounded-2xl cursor-pointer'>Log In</Button>
                     </div>
                 </Form>
             </Formik>
             <div className='w-100 h-10 flex items-center justify-between'>
                 <div className='w-30 h-0.5 bg-[#FBD5DD]'></div>
-                <P className='text-[14px]'>Or Sign Up With</P>
+                <P className='text-[14px]'>Or Log In With</P>
                 <div className='w-30 h-0.5 bg-[#FBD5DD]'></div>
             </div>
             <div className='w-full h-20 flex items-center justify-between'>
@@ -62,13 +58,13 @@ function SignupForm() {
                 </div>
             </div>
             <div className='w-full h-10 flex items-center justify-center text-[14px] gap-3'>
-                <P>Already have an account ?</P>
-                <Link href={'/login'}>
-                    <P className='text-[#FBD5DD]'>Log In</P>
+                <P>Don’t have an account ?</P>
+                <Link href={'/signup'}>
+                    <P className='text-[#FBD5DD]'>Sign Up</P>
                 </Link>
             </div>
         </div>
     );
 }
 
-export default SignupForm;
+export default LoginForm;
