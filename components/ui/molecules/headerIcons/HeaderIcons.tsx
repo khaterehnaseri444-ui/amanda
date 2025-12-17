@@ -8,7 +8,7 @@ function HeaderIcons() {
             <Link href={'/basket'}>
                 <RiShoppingCartLine className="text-[#aa5b57] cursor-pointer text-[22px] hover:text-[#FBD5DD]" />
             </Link>
-            <Link href={'/signIn'}>
+            <Link href={'/signup'}>
                 <VscAccount className="text-[#aa5b57] cursor-pointer text-[22px] hover:text-[#FBD5DD]" />
             </Link>
             <Link href={'/wishPage'}>
