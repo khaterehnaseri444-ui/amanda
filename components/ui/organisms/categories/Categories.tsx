@@ -9,7 +9,7 @@ const categoriesList = [
 
 function Categories() {
     return (
-        <div className='w-300 h-50 flex items-center justify-between mt-16'>
+        <div className='w-300 h-80 flex items-end justify-between'>
             {categoriesList.map((item) => (
                 <React.Fragment key={item.id}>
                     <CategoryCard img={item.img} href={item.href} title={item.title} />

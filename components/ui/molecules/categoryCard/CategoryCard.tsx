@@ -10,7 +10,7 @@ type categoryProsType = {
 function CategoryCard({ title, img, href }: categoryProsType) {
     return (
         <Link href={href}>
-            <div className='w-50 h-70 flex flex-col items-center gap-3'>
+            <div className='w-50 h-60 flex flex-col items-center gap-3'>
                 <div className='w-50 h-50 rounded-full flex'>
                     <Image src={img} className='w-full h-full rounded-full' />
                 </div>

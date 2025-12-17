@@ -12,7 +12,7 @@ import { GoHeart } from "react-icons/go";
 function TopSelling() {
     const { wishList, wishHandler } = useWish();
     return (
-        <div className="w-300 h-160 flex flex-col gap-5 justify-center">
+        <div className="w-300 h-140 flex flex-col gap-5 justify-center">
             <P className="text-[30px] font-bold bg-linear-to-l from-[#ffffff] to-[#f57c96] bg-clip-text text-transparent">Top Selling</P>
             <div className='w-full h-auto flex justify-between gap-3'>
                 {products.slice(14, 18).map((item) => {

@@ -27,7 +27,7 @@ function SignupForm() {
         password: ''
     }
     const formHandler = (values: FormValueType) => {
-        console.log(values);
+        localStorage.setItem('user', JSON.stringify({ name: values.name, email: values.email }))
         router.push('/')
     }
     return (
@@ -40,7 +40,7 @@ function SignupForm() {
                         <ErrorMessage name='name' component={'P'} className='text-[12px] text-[red]' />
                         <Field as={Input} name='email' type='text' placeholder='Email' className={`w-100 h-10 rounded-2xl outline-none p-5 border-[#FBD5DD] border`} />
                         <ErrorMessage name='email' component={'P'} className='text-[12px] text-[red]' />
-                        <Field as={Input} name='password' type='text' placeholder='Password' className={`w-100 h-10 rounded-2xl outline-none p-5 border-[#FBD5DD] border`} />
+                        <Field as={Input} name='password' type='password' placeholder='Password' className={`w-100 h-10 rounded-2xl outline-none p-5 border-[#FBD5DD] border`} />
                         <ErrorMessage name='password' component={'P'} className='text-[12px] text-[red]' />
                         <Button type='submit' className='w-100 h-10 bg-[#FBD5DD] rounded-2xl cursor-pointer'>Create Account</Button>
                     </div>

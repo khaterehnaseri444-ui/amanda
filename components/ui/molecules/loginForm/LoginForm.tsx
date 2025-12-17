@@ -14,6 +14,7 @@ const signupSchema = Yup.object().shape({
 })
 
 interface FormValueType {
+    name: string
     email: string
     password: string
 }
@@ -21,11 +22,12 @@ interface FormValueType {
 function LoginForm() {
     const router = useRouter();
     const initialValues: FormValueType = {
+        name: '',
         email: '',
         password: ''
     }
     const formHandler = (values: FormValueType) => {
-        console.log(values);
+        localStorage.setItem('user', JSON.stringify({ name: values.name, email: values.email }))
         router.push('/')
     }
     return (
