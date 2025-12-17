@@ -2,6 +2,8 @@ import React from "react";
 import P from "../../atom/CustomP/P";
 import Input from "../../atom/customInput/Input";
 import Button from "../../atom/customButton/Button";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 
 interface FiltersType {
     id: number
@@ -14,10 +16,8 @@ interface FiltersPropsType {
     setChosenBrand: React.Dispatch<React.SetStateAction<string[]>>
     chosenCategory: string[]
     setChosenCategory: React.Dispatch<React.SetStateAction<string[]>>
-}
-
-interface FilterHandlerType {
-
+    priceRange: [number, number]
+    setPriceRange: React.Dispatch<React.SetStateAction<[number, number]>>
 }
 
 const filterItems: FiltersType[] = [
@@ -40,7 +40,7 @@ const filterItems: FiltersType[] = [
         ]
     },
 ]
-function Filter({ chosenBrand, setChosenBrand, chosenCategory, setChosenCategory }: FiltersPropsType) {
+function Filter({ chosenBrand, setChosenBrand, chosenCategory, setChosenCategory, priceRange, setPriceRange }: FiltersPropsType) {
     const filterHandler = (
         value: string,
         list: string[],
@@ -77,6 +77,14 @@ function Filter({ chosenBrand, setChosenBrand, chosenCategory, setChosenCategory
                     </div>
                 </React.Fragment>
             ))}
+            <div className="w-60 h-40">
+                <P className="text-[20px] font-semibold">Price Range</P>
+                <Slider range min={0} max={200} value={priceRange} onChange={(value) => setPriceRange(value as [number, number])} trackStyle={[{ backgroundColor: "#FBD5DD" }]} handleStyle={[{ borderColor: "#aa5b57" }, { borderColor: "#aa5b57" },]} />
+                <div className="flex justify-between mt-2 text-sm">
+                    <P>${priceRange[0]}</P>
+                    <P>${priceRange[1]}</P>
+                </div>
+            </div>
         </div>
     );
 }
