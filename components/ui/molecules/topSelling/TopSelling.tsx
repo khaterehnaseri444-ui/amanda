@@ -8,9 +8,20 @@ import Button from "../../atom/customButton/Button";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { useWish } from "@/core/context/wishContext/WishContext";
 import { GoHeart } from "react-icons/go";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/core/redux/app/Store";
+import { addToCart } from "@/core/redux/features/CartSlice";
+import { ProductsType } from "@/core/types/productsType/ProductsType";
+import { useRouter } from "next/router";
 
 function TopSelling() {
     const { wishList, wishHandler } = useWish();
+    const dispatch = useDispatch<AppDispatch>();
+    const router = useRouter();
+    const cartButtonHandler = (item: ProductsType) => {
+        dispatch(addToCart(item))
+        router.push('/cart')
+    }
     return (
         <div className="w-300 h-140 flex flex-col gap-5 justify-center">
             <P className="text-[30px] font-bold bg-linear-to-l from-[#ffffff] to-[#f57c96] bg-clip-text text-transparent">Top Selling</P>
@@ -36,7 +47,7 @@ function TopSelling() {
                                         <P className='font-semibold text-[18px]'>${item.price}</P>
                                     </div>
                                     <div>
-                                        <Button>
+                                        <Button onClick={() => cartButtonHandler(item)}>
                                             <RiShoppingCartLine className="text-[#aa5b57] cursor-pointer text-[22px]" />
                                         </Button>
                                     </div>

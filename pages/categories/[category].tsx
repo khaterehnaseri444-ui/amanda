@@ -3,18 +3,27 @@ import Image from "@/components/ui/atom/customImage/Image";
 import P from "@/components/ui/atom/CustomP/P";
 import { products } from "@/core/constants/products/Products";
 import { useWish } from "@/core/context/wishContext/WishContext";
+import { AppDispatch } from "@/core/redux/app/Store";
+import { addToCart } from "@/core/redux/features/CartSlice";
+import { ProductsType } from "@/core/types/productsType/ProductsType";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { FcLikePlaceholder } from "react-icons/fc";
 import { GoHeart } from "react-icons/go";
 import { RiShoppingCartLine } from "react-icons/ri";
+import { useDispatch } from "react-redux";
 
 function ShowCategory() {
     const router = useRouter();
     const { category } = router.query
     const filterCagory = products.filter(item => item.category === category)
-    const { wishList, wishHandler } = useWish()
+    const { wishList, wishHandler } = useWish();
+    const dispatch = useDispatch<AppDispatch>();
+    const cartButtonHandler = (item: ProductsType) => {
+        dispatch(addToCart(item))
+        router.push('/cart')
+    }
     return (
         <div className="w-full h-auto flex items-center justify-center mb-30 flex-col">
             <div className="w-300 h-30 flex items-center gap-5">
@@ -48,7 +57,7 @@ function ShowCategory() {
                                         <P className='font-semibold text-[18px]'>${item.price}</P>
                                     </div>
                                     <div>
-                                        <Button>
+                                        <Button onClick={() => cartButtonHandler(item)}>
                                             <RiShoppingCartLine className="text-[#aa5b57] cursor-pointer text-[22px]" />
                                         </Button>
                                     </div>

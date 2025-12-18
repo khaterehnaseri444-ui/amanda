@@ -11,6 +11,7 @@ import { useWish } from '@/core/context/wishContext/WishContext';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/core/redux/app/Store';
 import { addToCart } from '@/core/redux/features/CartSlice';
+import { useRouter } from 'next/router';
 type ProductsFilterPropsType = {
     filterSeaarch: ProductsType[]
 }
@@ -18,6 +19,11 @@ function Products({ filterSeaarch }: ProductsFilterPropsType) {
     const dispatch = useDispatch<AppDispatch>();
     const { wishList, wishHandler } = useWish();
     const [visibleProducts, setVisibleProducts] = useState<number>(6);
+    const router = useRouter();
+    const cartButtonHandler = (item: ProductsType) => {
+        dispatch(addToCart(item))
+        router.push('/cart')
+    }
     return (
         <div className='w-full h-auto flex flex-col gap-10 mb-30'>
             <div className='w-full h-auto flex flex-wrap justify-between gap-3'>
@@ -42,7 +48,7 @@ function Products({ filterSeaarch }: ProductsFilterPropsType) {
                                         <P className='font-semibold text-[18px]'>${item.price}</P>
                                     </div>
                                     <div>
-                                        <Button onClick={() => dispatch(addToCart(item))}>
+                                        <Button onClick={() => cartButtonHandler(item)}>
                                             <RiShoppingCartLine className="text-[#aa5b57] cursor-pointer text-[22px]" />
                                         </Button>
                                     </div>
