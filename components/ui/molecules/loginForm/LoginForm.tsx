@@ -8,13 +8,11 @@ import { FcGoogle } from 'react-icons/fc'
 import { IoLogoFacebook } from 'react-icons/io'
 import Link from 'next/link'
 const signupSchema = Yup.object().shape({
-    name: Yup.string().required('Name is required'),
     email: Yup.string().email('Invalid Email').required('Email is required'),
     password: Yup.string().min(6, 'At least 6 Character').required('Password is required')
 })
 
 interface FormValueType {
-    name: string
     email: string
     password: string
 }
@@ -22,12 +20,11 @@ interface FormValueType {
 function LoginForm() {
     const router = useRouter();
     const initialValues: FormValueType = {
-        name: '',
         email: '',
         password: ''
     }
     const formHandler = (values: FormValueType) => {
-        localStorage.setItem('user', JSON.stringify({ name: values.name, email: values.email }))
+        localStorage.setItem('user', JSON.stringify({  email: values.email }))
         router.push('/')
     }
     return (
@@ -38,7 +35,7 @@ function LoginForm() {
                     <div className='w-full h-auto flex flex-col justify-between gap-3'>
                         <Field as={Input} name='email' type='text' placeholder='Email' className={`w-100 h-10 rounded-2xl outline-none p-5 border-[#FBD5DD] border`} />
                         <ErrorMessage name='email' component={'P'} className='text-[12px] text-[red]' />
-                        <Field as={Input} name='password' type='text' placeholder='Password' className={`w-100 h-10 rounded-2xl outline-none p-5 border-[#FBD5DD] border`} />
+                        <Field as={Input} name='password' type='password' placeholder='Password' className={`w-100 h-10 rounded-2xl outline-none p-5 border-[#FBD5DD] border`} />
                         <ErrorMessage name='password' component={'P'} className='text-[12px] text-[red]' />
                         <Button type='submit' className='w-100 h-10 bg-[#FBD5DD] rounded-2xl cursor-pointer'>Log In</Button>
                     </div>

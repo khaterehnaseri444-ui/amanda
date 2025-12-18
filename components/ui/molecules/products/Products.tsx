@@ -8,12 +8,16 @@ import { RiShoppingCartLine } from 'react-icons/ri';
 import { GoHeart } from 'react-icons/go';
 import { ProductsType } from '@/core/types/productsType/ProductsType';
 import { useWish } from '@/core/context/wishContext/WishContext';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/core/redux/app/Store';
+import { addToCart } from '@/core/redux/features/CartSlice';
 type ProductsFilterPropsType = {
     filterSeaarch: ProductsType[]
 }
 function Products({ filterSeaarch }: ProductsFilterPropsType) {
+    const dispatch = useDispatch<AppDispatch>();
     const { wishList, wishHandler } = useWish();
-    const [visibleProducts, setVisibleProducts] = useState<number>(6)
+    const [visibleProducts, setVisibleProducts] = useState<number>(6);
     return (
         <div className='w-full h-auto flex flex-col gap-10 mb-30'>
             <div className='w-full h-auto flex flex-wrap justify-between gap-3'>
@@ -38,7 +42,7 @@ function Products({ filterSeaarch }: ProductsFilterPropsType) {
                                         <P className='font-semibold text-[18px]'>${item.price}</P>
                                     </div>
                                     <div>
-                                        <Button>
+                                        <Button onClick={() => dispatch(addToCart(item))}>
                                             <RiShoppingCartLine className="text-[#aa5b57] cursor-pointer text-[22px]" />
                                         </Button>
                                     </div>
