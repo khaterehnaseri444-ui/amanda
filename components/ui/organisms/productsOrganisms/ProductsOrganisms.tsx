@@ -13,7 +13,7 @@ function ProductsOrganisms() {
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 200])
     const filterProducts = products.filter((item) => {
         const filterSeaarch = item.name.toLowerCase().includes(valueInput.toLowerCase())
-        const filterBrands = chosenBrand.length === 0 || chosenBrand.includes(item.brand)
+        const filterBrands = chosenBrand.length === 0 || chosenBrand.some((B => B.toLowerCase() === item.brand.toLowerCase()))
         const filterCategory = chosenCategory.length === 0 || chosenCategory.includes(item.category)
         const filterPrice = item.price >= priceRange[0] && item.price <= priceRange[1]
         return filterSeaarch && filterBrands && filterCategory && filterPrice

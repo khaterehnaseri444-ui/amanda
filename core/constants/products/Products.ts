@@ -224,7 +224,7 @@ export const products: ProductsType[] = [
     },
     {
         id: 18,
-        name: 'MAC powder blush',
+        name: 'Mac powder blush',
         img: '/assets/images/item18.jpg',
         price: 114,
         category: 'Face Makeup',
@@ -259,6 +259,45 @@ export const products: ProductsType[] = [
             '/assets/images/itemDetail20-1.jpg',
             '/assets/images/itemDetail20-2.jpg',
             '/assets/images/itemDetail20-3.jpg',
+        ]
+    },
+      {
+        id: 21,
+        name: 'Mac lip stick',
+        img: '/assets/images/itemDetail1-2.jpg',
+        price: 30,
+        category: 'Lip Makeup',
+        brand: 'Mac',
+        images: [
+            '/assets/images/item1.jpg',
+            '/assets/images/itemDetail1-1.jpg',
+            '/assets/images/itemDetail1-3.jpg',
+        ]
+    },
+    {
+        id: 23,
+        name: 'Rare Beauty highlighter',
+        img: '/assets/images/itemDetail23-1.jpg',
+        price: 32,
+        category: 'Face Makeup',
+        brand: 'Rare Beauty',
+        images: [
+            '/assets/images/item23.jpg',
+            '/assets/images/itemDetail23-3.jpg',
+            '/assets/images/itemDetail23-2.jpg',
+        ]
+    },
+    {
+        id: 24,
+        name: 'Hair Mask',
+        img: '/assets/images/item24.jpg',
+        price: 32,
+        category: 'Skin Care',
+        brand: 'Gisou',
+        images: [
+            '/assets/images/itemDetail24-1.jpg',
+            '/assets/images/itemDetail24-2.jpg',
+            '/assets/images/itemDetail24-3.jpg',
         ]
     },
 ]
