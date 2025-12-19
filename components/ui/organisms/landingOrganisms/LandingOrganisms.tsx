@@ -1,4 +1,5 @@
 import Image from "../../atom/customImage/Image";
+import CommentsSwiper from "../../molecules/commentsSwiper/CommentsSwiper";
 import Logos from "../../molecules/logos/Logos";
 import NewIn from "../../molecules/newIn/NewIn";
 import TopBrands from "../../molecules/topBrands/TopBrands";
@@ -14,6 +15,7 @@ function LandingOrganisms() {
                 <Categories />
                 <TopSelling />
                 <TopBrands />
+                <CommentsSwiper/>
                 <NewIn />
                 <Posters />
                 <Logos />

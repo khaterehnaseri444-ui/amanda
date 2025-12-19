@@ -1,32 +1,32 @@
-import React from 'react';
-import P from '../../atom/CustomP/P';
-import { products } from '@/core/constants/products/Products';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import Image from '../../atom/customImage/Image';
+import P from '../../atom/CustomP/P';
+import Link from 'next/link';
 import { FcLikePlaceholder } from 'react-icons/fc';
 import Button from '../../atom/customButton/Button';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { GoHeart } from 'react-icons/go';
+import { ProductsType } from '@/core/types/productsType/ProductsType';
 import { useWish } from '@/core/context/wishContext/WishContext';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/core/redux/app/Store';
-import { useRouter } from 'next/router';
-import { ProductsType } from '@/core/types/productsType/ProductsType';
 import { addToCart } from '@/core/redux/features/CartSlice';
+import { useRouter } from 'next/router';
+import { products } from '@/core/constants/products/Products';
 
-function NewIn() {
-    const { wishList, wishHandler } = useWish();
+function AlsoLike() {
     const dispatch = useDispatch<AppDispatch>();
+    const { wishList, wishHandler } = useWish();
     const router = useRouter();
     const cartButtonHandler = (item: ProductsType) => {
         dispatch(addToCart(item))
         router.push('/cart')
     }
     return (
-        <div className="w-300 h-140 flex flex-col gap-5 justify-center">
-            <P className="text-[30px] font-bold bg-linear-to-l from-[#ffffff] to-[#f57c96] bg-clip-text text-transparent">New In</P>
+        <div className='w-full h-120 flex flex-col gap-10 mb-10 justify-between mt-20'>
+            <P className="text-[30px] font-bold bg-linear-to-l from-[#ffffff] to-[#f57c96] bg-clip-text text-transparent">Also May Like</P>
             <div className='w-full h-auto flex justify-between gap-3'>
-                {products.slice(6, 10).map((item) => {
+                {products.slice(19, 24).map((item) => {
                     const IsWish = wishList.some((W) => W.id === item.id)
                     return (
                         <React.Fragment key={item.id}>
@@ -61,4 +61,4 @@ function NewIn() {
     );
 }
 
-export default NewIn;
+export default AlsoLike;

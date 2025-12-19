@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { useWish } from "@/core/context/wishContext/WishContext";
 import { GoHeart } from "react-icons/go";
 import CommentsSwiper from "../../molecules/commentsSwiper/CommentsSwiper";
+import AlsoLike from "../../molecules/alsoLike/AlsoLike";
 type ProductsPropsType = {
     productDetail: ProductsType
 };
@@ -70,6 +71,7 @@ function ProductDetailOrganisms({ productDetail }: ProductsPropsType) {
             <div className="w-300 h-100">
                 <CommentsSwiper />
             </div>
+            <AlsoLike />
         </div>
     );
 }

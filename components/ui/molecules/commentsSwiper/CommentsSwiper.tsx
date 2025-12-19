@@ -70,11 +70,6 @@ const comments: CommentsType[] = [
 ]
 function CommentsSwiper() {
     const [swiperRef, setSwiperRef] = useState<SwiperType | null>(null)
-    const nextSlide = () => {
-        if (swiperRef) {
-            swiperRef.slideNext()
-        }
-    }
     const prevSlide = () => {
         if (swiperRef) {
             swiperRef.slidePrev()
