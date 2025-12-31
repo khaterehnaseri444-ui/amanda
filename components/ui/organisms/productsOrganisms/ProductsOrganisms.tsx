@@ -5,16 +5,29 @@ import Filter from "../../molecules/filter/Filter";
 import SearchBar from "../../molecules/searchBar/SearchBar";
 import { useEffect, useState } from "react";
 import { products } from "@/core/constants/products/Products";
-import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 
 function ProductsOrganisms() {
-    const searchParams = useSearchParams();
     const router = useRouter();
-    const [valueInput, setValueInput] = useState<string>(searchParams.get('search') || '')
-    const [chosenBrand, setChosenBrand] = useState<string[]>(searchParams.get('brand')?.split(',') || [])
-    const [chosenCategory, setChosenCategory] = useState<string[]>(searchParams.get('category')?.split(',') || [])
-    const [priceRange, setPriceRange] = useState<[number, number]>([Number(searchParams.get('min') || 0), Number(searchParams.get('max') || 200)])
+    console.log(router);
+    const { brand, category, min, max } = router.query
+    const [valueInput, setValueInput] = useState<string>('')
+    const [chosenBrand, setChosenBrand] = useState<string[]>([])
+    const [chosenCategory, setChosenCategory] = useState<string[]>([])
+    const [priceRange, setPriceRange] = useState<[number, number]>([0, 200])
+    useEffect(() => {
+        const MinNumber = Number(min)
+        const MaxNumber = Number(max)
+        if (typeof brand === 'string') {
+            setChosenBrand(brand.split(','))
+        }
+        if (typeof category === 'string') {
+            setChosenCategory(category.split(','))
+        }
+        if (!isNaN(MinNumber) && !isNaN(MaxNumber)) {
+            setPriceRange([MinNumber, MaxNumber])
+        }
+    }, [brand, category, min, max])
     const filterProducts = products.filter((item) => {
         const filterSeaarch = item.name.toLowerCase().includes(valueInput.toLowerCase())
         const filterBrands = chosenBrand.length === 0 || chosenBrand.some((B => B.toLowerCase() === item.brand.toLowerCase()))
@@ -23,14 +36,8 @@ function ProductsOrganisms() {
         return filterSeaarch && filterBrands && filterCategory && filterPrice
     })
     useEffect(() => {
-        const url = new URLSearchParams()
-        if (valueInput) url.set('search', valueInput)
-        if (chosenBrand.length) url.set('brand', chosenBrand.join(','))
-        if (chosenCategory.length) url.set('category', chosenCategory.join(','))
-        url.set('min', priceRange[0].toString())
-        url.set('max', priceRange[1].toString())
-        router.push(`/products?${url.toString()}`,)
-    }, [valueInput, chosenBrand, chosenCategory, priceRange])
+        router.push(`/products?brand=${chosenBrand}&category=${chosenCategory}&min=${priceRange[0]}&max=${priceRange[1]}`)
+    }, [chosenBrand,chosenCategory,priceRange])
     return (
         <div className='w-full h-auto flex flex-col justify-center items-center'>
             <div className="w-300 h-30 flex items-center gap-5">
@@ -46,7 +53,7 @@ function ProductsOrganisms() {
                     <Filter chosenBrand={chosenBrand} setChosenBrand={setChosenBrand} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} priceRange={priceRange} setPriceRange={setPriceRange} />
                 </div>
                 <div className="w-180 h-auto">
-                    <Products filterSeaarch={filterProducts} />
+                    <Products filterProducts={filterProducts} />
                 </div>
             </div>
         </div>
