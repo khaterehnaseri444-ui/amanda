@@ -12,10 +12,8 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/core/redux/app/Store';
 import { addToCart } from '@/core/redux/features/CartSlice';
 import { useRouter } from 'next/router';
-type ProductsFilterPropsType = {
-    filterProducts: ProductsType[]
-}
-function Products({ filterProducts }: ProductsFilterPropsType) {
+import { products } from '@/core/constants/products/Products';
+function Products() {
     const dispatch = useDispatch<AppDispatch>();
     const { wishList, wishHandler } = useWish();
     const [visibleProducts, setVisibleProducts] = useState<number>(6);
@@ -27,7 +25,7 @@ function Products({ filterProducts }: ProductsFilterPropsType) {
     return (
         <div className='w-full h-auto flex flex-col gap-10 mb-30'>
             <div className='w-full h-auto flex flex-wrap justify-between gap-3'>
-                {filterProducts.slice(0, visibleProducts).map((item) => {
+                {products.slice(0, visibleProducts).map((item) => {
                     const IsWish = wishList.some((W) => W.id === item.id)
                     return (
                         <React.Fragment key={item.id}>
@@ -59,10 +57,10 @@ function Products({ filterProducts }: ProductsFilterPropsType) {
                 })}
             </div>
             <div className='w-full h-20 flex justify-center items-center'>
-                {visibleProducts < filterProducts.length && (
+                {visibleProducts < products.length && (
                     <Button
                         className='w-60 h-10 bg-linear-to-l from-[#fdf4f6] to-[#FBD5DD] cursor-pointer'
-                        onClick={() => setVisibleProducts(filterProducts.length)}>
+                        onClick={() => setVisibleProducts(products.length)}>
                         Load More
                     </Button>
                 )}
